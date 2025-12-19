@@ -19,8 +19,8 @@ export default function Contact() {
                                 {
                                     icon: <Phone className="w-6 h-6" />,
                                     title: "Phone",
-                                    value: "+1 (555) 123-4567",
-                                    link: "tel:+15551234567"
+                                    value: "+961 76340955",
+                                    link: "tel:+96176340955"
                                 },
                                 {
                                     icon: <Mail className="w-6 h-6" />,
