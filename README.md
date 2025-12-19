@@ -5,7 +5,7 @@ A premium, responsive website for Vision for Cleaning, built with Vite, React, a
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js**: Required to run the project locally. (Download from [nodejs.org](https://nodejs.org/)))
+- **Node.js**: Required to run the project locally. (Download from [nodejs.org](https://nodejs.org/))
 
 ### Installation
 1.  Clone the repository.
