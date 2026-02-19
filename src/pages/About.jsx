@@ -27,8 +27,8 @@ export default function About() {
             <section className="relative pt-40 pb-24 bg-slate-900 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=2070&q=80"
-                        alt="Professional cleaning team"
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2070&q=80"
+                        alt="Modern corporate office building"
                         className="w-full h-full object-cover opacity-20"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
@@ -80,8 +80,8 @@ export default function About() {
                             className="relative"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
-                                alt="Professional office cleaning"
+                                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=900&q=80"
+                                alt="Professional cleaning team at work"
                                 className="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
                             />
                             {/* Floating badge */}
