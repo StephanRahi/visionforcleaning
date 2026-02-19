@@ -9,11 +9,8 @@ export default function Footer() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
                         {/* Brand */}
                         <div className="sm:col-span-2 lg:col-span-1">
-                            <div className="flex items-center gap-2 mb-4">
-                                <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-                                    <span className="text-white font-black text-sm">V</span>
-                                </div>
-                                <span className="text-white font-bold text-lg">Vision For Cleaning</span>
+                            <div className="mb-4">
+                                <img src="/logo.png" alt="Vision For Cleaning" className="h-10 w-auto brightness-0 invert" />
                             </div>
                             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
                                 Premium commercial cleaning &amp; facility support. Owner-supervised. Industrial-grade.

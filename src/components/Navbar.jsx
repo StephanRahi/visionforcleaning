@@ -23,13 +23,8 @@ export default function Navbar() {
         <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-transparent'}`}>
             <div className="container mx-auto px-6 flex items-center justify-between h-20">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-                        <span className="text-white font-black text-sm">V</span>
-                    </div>
-                    <span className="text-white font-bold text-lg tracking-tight">
-                        Vision<span className="text-primary-400">.</span>
-                    </span>
+                <Link to="/" className="flex items-center">
+                    <img src="/logo.png" alt="Vision For Cleaning" className="h-10 w-auto brightness-0 invert" />
                 </Link>
 
                 {/* Desktop nav */}
