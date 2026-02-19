@@ -80,8 +80,8 @@ export default function About() {
                             className="relative"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
-                                alt="Professional team in a modern office"
+                                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
+                                alt="Professional cleaning service in action"
                                 className="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
                             />
                             {/* Floating badge */}
