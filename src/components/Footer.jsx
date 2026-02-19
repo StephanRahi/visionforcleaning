@@ -10,7 +10,9 @@ export default function Footer() {
                         {/* Brand */}
                         <div className="sm:col-span-2 lg:col-span-1">
                             <div className="mb-4">
-                                <img src="/logo.png" alt="Vision For Cleaning" className="h-10 w-auto brightness-0 invert" />
+                                <div className="bg-white rounded-xl px-3 py-1.5 inline-block shadow-sm">
+                                    <img src="/logo.png" alt="Vision For Cleaning" className="h-8 w-auto" />
+                                </div>
                             </div>
                             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
                                 Premium commercial cleaning &amp; facility support. Owner-supervised. Industrial-grade.

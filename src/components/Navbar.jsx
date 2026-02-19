@@ -24,7 +24,9 @@ export default function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between h-20">
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
-                    <img src="/logo.png" alt="Vision For Cleaning" className="h-10 w-auto brightness-0 invert" />
+                    <div className="bg-white rounded-xl px-3 py-1.5 shadow-sm">
+                        <img src="/logo.png" alt="Vision For Cleaning" className="h-8 w-auto" />
+                    </div>
                 </Link>
 
                 {/* Desktop nav */}
