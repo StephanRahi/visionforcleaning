@@ -1,51 +1,76 @@
-import { Home, Building2, Sparkles, shieldCheck, Clock, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Building2, HardHat, Layers } from 'lucide-react';
+
+const services = [
+    {
+        icon: Building2,
+        title: 'Corporate Maintenance',
+        body: 'Daily and weekly office cleaning tailored for corporate environments.',
+        tag: 'Office',
+    },
+    {
+        icon: HardHat,
+        title: 'Post-Construction Detailing',
+        body: 'Deep cleaning for new builds and renovations to make your property showroom-ready.',
+        tag: 'Construction',
+    },
+    {
+        icon: Layers,
+        title: 'Specialized Floor Care',
+        body: 'Carpet extraction, hard floor polishing & rubber flooring.',
+        tag: 'Flooring',
+    },
+];
 
 export default function Services() {
-    const services = [
-        {
-            icon: <Home className="w-8 h-8 text-primary" />,
-            title: "Residential Cleaning",
-            description: "Comprehensive home cleaning services tailored to your lifestyle. From deep cleaning to regular maintenance.",
-            features: ["Deep Cleaning", "Standard Cleaning", "Move-in/Move-out"]
-        },
-        {
-            icon: <Building2 className="w-8 h-8 text-primary" />,
-            title: "Commercial Cleaning",
-            description: "Professional cleaning solutions for offices and commercial spaces. Maintain a pristine business environment.",
-            features: ["Office Spaces", "Retail Stores", "Post-Construction"]
-        }
-    ];
-
     return (
-        <section id="services" className="py-24 bg-white">
+        <section id="services" className="py-28 bg-white">
             <div className="container mx-auto px-6">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Services</h2>
-                    <p className="text-lg text-slate-600">
-                        We deliver excellence in every detail. Choose the service that fits your needs.
-                    </p>
-                </div>
+                <motion.div
+                    className="text-center max-w-2xl mx-auto mb-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary-600 mb-4 block">
+                        What We Do
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">Services</span>
+                    </h2>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    {services.map((service, index) => (
-                        <div key={index} className="group p-8 rounded-2xl border border-slate-100 bg-white hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
-                            <div className="bg-primary-50 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                {service.icon}
-                            </div>
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                            <p className="text-slate-600 mb-6 leading-relaxed">
-                                {service.description}
-                            </p>
-                            <ul className="space-y-3">
-                                {service.features.map((feature, idx) => (
-                                    <li key={idx} className="flex items-center text-slate-700 font-medium">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span>
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    {services.map((svc, i) => {
+                        const Icon = svc.icon;
+                        return (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.15, duration: 0.6 }}
+                                className="group relative overflow-hidden rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-400 p-10"
+                            >
+                                {/* Decorative gradient blob */}
+                                <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                <div className="relative z-10">
+                                    <div className="flex items-start justify-between mb-8">
+                                        <div className="w-14 h-14 rounded-2xl bg-primary-600 flex items-center justify-center shadow-lg">
+                                            <Icon className="w-7 h-7 text-white" />
+                                        </div>
+                                        <span className="text-xs font-semibold tracking-wider uppercase text-primary-500 bg-primary-50 border border-primary-100 px-3 py-1 rounded-full">
+                                            {svc.tag}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-4">{svc.title}</h3>
+                                    <p className="text-slate-500 leading-relaxed">{svc.body}</p>
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

@@ -1,18 +1,16 @@
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TrustBar from './components/TrustBar';
+import WhyUs from './components/WhyUs';
 import Services from './components/Services';
-import About from './components/About';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
     return (
-        <div className="min-h-screen bg-slate-50 font-sans">
-            <Navbar />
+        <div className="min-h-screen bg-white font-sans">
             <Hero />
+            <TrustBar />
+            <WhyUs />
             <Services />
-            <About />
-            <Contact />
             <Footer />
         </div>
     );
