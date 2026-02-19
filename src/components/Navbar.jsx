@@ -1,73 +1,98 @@
+import { NavLink, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+
+const links = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About' },
+    { to: '/services', label: 'Services' },
+    { to: '/contact', label: 'Contact' },
+];
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        const handler = () => setScrolled(window.scrollY > 40);
+        window.addEventListener('scroll', handler);
+        return () => window.removeEventListener('scroll', handler);
     }, []);
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="flex items-center gap-2 group">
-                    <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <Sparkles className="w-6 h-6 text-primary" />
+        <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-transparent'}`}>
+            <div className="container mx-auto px-6 flex items-center justify-between h-20">
+                {/* Logo */}
+                <Link to="/" className="flex items-center gap-2 group">
+                    <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
+                        <span className="text-white font-black text-sm">V</span>
                     </div>
-                    <span className={`text-xl font-bold font-sans tracking-tight ${scrolled ? 'text-slate-900' : 'text-slate-900'}`}>
-                        Vision for Cleaning
+                    <span className="text-white font-bold text-lg tracking-tight">
+                        Vision<span className="text-primary-400">.</span>
                     </span>
-                </a>
+                </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8">
-                    {['Home', 'Services', 'About', 'Contact'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="text-slate-600 hover:text-primary font-medium transition-colors"
+                {/* Desktop nav */}
+                <nav className="hidden md:flex items-center gap-1">
+                    {links.map(l => (
+                        <NavLink
+                            key={l.to}
+                            to={l.to}
+                            end={l.to === '/'}
+                            className={({ isActive }) =>
+                                `px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? 'text-white bg-white/10'
+                                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                                }`
+                            }
                         >
-                            {item}
-                        </a>
+                            {l.label}
+                        </NavLink>
                     ))}
-                    <a href="#contact" className="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary-700 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40">
+                    <Link
+                        to="/contact"
+                        className="ml-4 px-5 py-2 bg-primary-500 hover:bg-primary-400 text-white text-sm font-semibold rounded-full transition-colors duration-200"
+                    >
                         Get a Quote
-                    </a>
-                </div>
+                    </Link>
+                </nav>
 
-                {/* Mobile Menu Button */}
+                {/* Mobile hamburger */}
                 <button
-                    className="md:hidden text-slate-700 p-2"
-                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden text-white p-2"
+                    onClick={() => setOpen(o => !o)}
+                    aria-label="Toggle menu"
                 >
-                    {isOpen ? <X /> : <Menu />}
+                    {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 shadow-xl py-6 px-6 flex flex-col space-y-4 animate-in slide-in-from-top-5">
-                    {['Home', 'Services', 'About', 'Contact'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="text-lg font-medium text-slate-700 hover:text-primary"
-                            onClick={() => setIsOpen(false)}
+            {/* Mobile menu */}
+            {open && (
+                <div className="md:hidden bg-slate-900/98 backdrop-blur-md border-t border-slate-800 px-6 py-4 space-y-1">
+                    {links.map(l => (
+                        <NavLink
+                            key={l.to}
+                            to={l.to}
+                            end={l.to === '/'}
+                            onClick={() => setOpen(false)}
+                            className={({ isActive }) =>
+                                `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive ? 'text-white bg-white/10' : 'text-slate-300 hover:text-white'
+                                }`
+                            }
                         >
-                            {item}
-                        </a>
+                            {l.label}
+                        </NavLink>
                     ))}
-                    <a href="#contact" className="bg-primary text-white text-center py-3 rounded-lg font-medium">
+                    <Link
+                        to="/contact"
+                        onClick={() => setOpen(false)}
+                        className="block mt-2 px-4 py-3 bg-primary-500 text-white text-sm font-semibold rounded-lg text-center"
+                    >
                         Get a Quote
-                    </a>
+                    </Link>
                 </div>
             )}
-        </nav>
+        </header>
     );
 }
