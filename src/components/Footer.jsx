@@ -38,13 +38,13 @@ export default function Footer() {
                             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Contact</h4>
                             <ul className="space-y-3">
                                 <li>
-                                    <a href="tel:+9613372457" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
+                                    <a href="tel:+96176340955" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
                                         <Phone className="w-4 h-4 text-primary-400 flex-shrink-0" />
-                                        +961 3 372 457
+                                        +961 76 340 955
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://wa.me/9613372457" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors text-sm">
+                                    <a href="https://wa.me/96176340955" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors text-sm">
                                         <MessageCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                                         WhatsApp
                                     </a>

@@ -14,7 +14,7 @@ export default function Contact() {
         const msg = encodeURIComponent(
             `Hello Vision For Cleaning!\n\nName: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nService: ${form.service}`
         );
-        window.open(`https://wa.me/9613372457?text=${msg}`, '_blank');
+        window.open(`https://wa.me/96176340955?text=${msg}`, '_blank');
         setSubmitted(true);
     };
 
@@ -56,7 +56,7 @@ export default function Contact() {
                             <div className="space-y-6">
                                 {/* Phone */}
                                 <a
-                                    href="tel:+9613372457"
+                                    href="tel:+96176340955"
                                     className="flex items-center gap-4 p-5 rounded-2xl border border-slate-100 bg-slate-50 hover:border-primary-200 hover:bg-primary-50 transition-all duration-300 group"
                                 >
                                     <div className="w-12 h-12 rounded-2xl bg-primary-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -64,13 +64,13 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-0.5">Phone</p>
-                                        <p className="text-slate-900 font-semibold text-lg">+961 3 372 457</p>
+                                        <p className="text-slate-900 font-semibold text-lg">+961 76 340 955</p>
                                     </div>
                                 </a>
 
                                 {/* WhatsApp */}
                                 <a
-                                    href="https://wa.me/9613372457"
+                                    href="https://wa.me/96176340955"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-4 p-5 rounded-2xl border border-slate-100 bg-slate-50 hover:border-green-200 hover:bg-green-50 transition-all duration-300 group"
