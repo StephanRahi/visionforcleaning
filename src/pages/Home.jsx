@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
-import TrustBar from '../components/TrustBar';
 
 const highlights = [
     {
@@ -81,9 +80,6 @@ export default function Home() {
                     <motion.div className="w-px h-8 bg-white/30" animate={{ scaleY: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 1.5 }} />
                 </motion.div>
             </section>
-
-            {/* ── TRUST BAR ── */}
-            <TrustBar />
 
             {/* ── OVERVIEW ── */}
             <section className="py-28 bg-white">
